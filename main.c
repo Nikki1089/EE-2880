@@ -56,17 +56,17 @@ adc_init();
     // Initialize the scan
     //cyBOT_init_Scan(0b0111);
     // Remember servo calibration function and variables from Lab 3
-    right_calibration_value = 290500;
-    left_calibration_value = 1288000;
+   // right_calibration_value = 290500;
+    //left_calibration_value = 1288000;
 
    // object_t objs[MAX_OBJS];
 //    int i, smallest_i = 0;
 //    float smallest_width;
-    size_t objc;
-    int timeout, smallest_i;
-    float distleft;
+  //  size_t objc;
+    //int timeout, smallest_i;
+   // float distleft;
    // oi_t *bump = oi_alloc();
-    oi_init(bump);
+   // oi_init(bump);
 
     while (1)
     {
