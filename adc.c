@@ -1,5 +1,6 @@
 #include "adc.h"
-
+#include <stdint.h>
+#include <inc/tm4c123gh6pm.h>
 /**
  * Initialize ADC for Lab 8, Part 1.
  * Written by Lucas England.
@@ -11,17 +12,18 @@
  * ```
  */
 void adc_init() {
-	SYSCTL_RCGCADC_R |= ADC_MODULE_0;
+	// enables clocks for adc0 and port b
+	SYSCTL_RCGCADC_R |= 0x1;
 	SYSCTL_RCGCGPIO_R |= 0x02;
 
-	while ((SYSCTL_PRGPIO_R & 0x02)) {
+	while ((SYSCTL_PRGPIO_R & 0x02) == 0) { // waiting until GPIO port b is ready
 		/* do nothing */
 	};
-
-	GPIO_PORTB_DIR_R &= ~0x10;
-	GPIO_PORTB_AFSEL_R |= 0x10;
-	GPIO_PORTB_DEN_R &= ~0x10;
-	GPIO_PORTB_AMSEL_R |= 0x10;
+// configures pb4 for analog inputs
+	GPIO_PORTB_DIR_R &= ~0x10; // sets pb4 as input
+	GPIO_PORTB_AFSEL_R |= 0x10; //enables alternate function
+	GPIO_PORTB_DEN_R &= ~0x10; // disables digital 
+	GPIO_PORTB_AMSEL_R |= 0x10; // enables analog
 
 	while (!(SYSCTL_PRADC_R & ADC_MODULE_0)) {
 		/* do nothing */
