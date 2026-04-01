@@ -22,6 +22,7 @@
 #include "cyBot_Scan.h"  // Scan using CyBot servo and sensors
 #include "scan_objects.h"
 #include "adc.h"
+#include "adc.c"
 
 //#define PI 3.1415926535897
 //#define LINEAR_WIDTH(o) ((o.width * PI * o.dist) / 180.0)
