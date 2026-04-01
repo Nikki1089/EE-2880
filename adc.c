@@ -55,5 +55,12 @@ uint16_t adc_read(void) {
 //}
 //return sum /16; // returns average val
 //}
+// float adc_getdustance(void){
+// uint16_t adc = adc_read();
 
+  //  if (adc <= # ) {
+        //return 9999;
+   // }
+
+    //return distance equation;
 // needs to average and distance 
