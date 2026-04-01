@@ -23,7 +23,7 @@
 #include "scan_objects.h"
 #include "adc.h"
 
-#define PI 3.1415926535897
+//#define PI 3.1415926535897
 //#define LINEAR_WIDTH(o) ((o.width * PI * o.dist) / 180.0)
 //#define SPEED (MAX_SPEED / 4)
 
