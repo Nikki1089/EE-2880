@@ -21,8 +21,7 @@
 
 #include "cyBot_Scan.h"  // Scan using CyBot servo and sensors
 #include "scan_objects.h"
-
-//#include "adc.h"
+#include "adc.h"
 
 #define PI 3.1415926535897
 #define LINEAR_WIDTH(o) ((o.width * PI * o.dist) / 180.0)
@@ -37,7 +36,7 @@ int main(void)
     // initialize the cyBot UART1 before trying to use it
     uart_interrupt_init();
 
-//    adc_init();
+adc_init();
 
 //  // (Uncomment ME for UART init part of lab)
 //    cyBot_uart_init_clean();  // Clean UART1 initialization, before running your UART1 GPIO init code
@@ -71,7 +70,12 @@ int main(void)
 
     while (1)
     {
-
+        uint16_t adc_value = adc_read(); // change adc_read() to adc_read_average()
+        // add float dist = adc_getdistance();
+        lcd_printf("adc: %u"), adc_value);//,adc_value,dist); for part 2 plus change formatting to add dist:
+        timer_waitMillis(200);
+    }
+}
 //        char cmd = uart_receive();
 //        // echo the received key back to PC
 //        uart_sendChar(cmd);
