@@ -89,7 +89,7 @@ int main(void)
     while (1)
     {
         uint16_t adc_value = adc_read(); // change adc_read() to adc_read_average()
-        // add float dist = adc_getdistance();
+         float dist = adc_getdistance();
         lcd_printf("adc: %u"), adc_value);//,adc_value,dist); for part 2 plus change formatting to add dist:
         timer_waitMillis(200);
 
