@@ -40,3 +40,20 @@ void adc_init() {
 	ADC0_IM_R &= ~ADC_SS_0;
 	ADC0_ACTSS_R |= ADC_SS_0;
 }
+uint16_t adc_read(void) {
+    ADC0_PSSI_R = 0x8; // conversion on ss3
+    while((ADC0_RIS_R & 0x8) == 0); // waiting for conversion to finish
+    uint16_t result = ADC0_SSFIFO3_R;  // read 12 bit result
+    ADC0_ISC_R = 0x8; // clears flag 
+    return result;
+}
+uint16_t adc_read_average(void){
+	int i;
+uint32_t sum = 0; // stores total for all samples
+for(i = 0; i < 16; i++){ // takes multiple ADC readings 
+sum += adc_read(); // adds each sample to total 
+}
+return sum /16; // returns average val
+}
+
+// needs to average and distance 
