@@ -93,12 +93,12 @@ int main(void)
         lcd_printf("adc: %u"), adc_value);//,adc_value,dist); for part 2 plus change formatting to add dist:
         timer_waitMillis(200);
 
-       //adcavg = 0;
-       // distanceavg = 0;
-     //  for (i = 0; i < 1000; i++) {
-       //     adcavg += adc_read() / 1000.0;
-         //   distanceavg += adc_getDistance() / 1000.0;
-           // timer_waitMillis(1);
+       adcavg = 0;
+       distanceavg = 0;
+     for (i = 0; i < 1000; i++) {
+    adcavg += adc_read() / 1000.0;
+      distanceavg += adc_getDistance() / 1000.0;
+       timer_waitMillis(1);
         }
        
     }
