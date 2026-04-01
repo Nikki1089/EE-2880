@@ -24,8 +24,8 @@
 #include "adc.h"
 
 #define PI 3.1415926535897
-#define LINEAR_WIDTH(o) ((o.width * PI * o.dist) / 180.0)
-#define SPEED (MAX_SPEED / 4)
+//#define LINEAR_WIDTH(o) ((o.width * PI * o.dist) / 180.0)
+//#define SPEED (MAX_SPEED / 4)
 
 int main(void)
 {
@@ -49,6 +49,8 @@ int main(void)
     //button_init();
     timer_init(); // Must be called before lcd_init(), which uses timer functions
     lcd_init();
+    int i;
+
 
     // initialize the cyBot UART1 before trying to use it
     //uart_interrupt_init();
