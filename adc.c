@@ -47,13 +47,13 @@ uint16_t adc_read(void) {
     ADC0_ISC_R = 0x8; // clears flag 
     return result;
 }
-uint16_t adc_read_average(void){
-	int i;
-uint32_t sum = 0; // stores total for all samples
-for(i = 0; i < 16; i++){ // takes multiple ADC readings 
-sum += adc_read(); // adds each sample to total 
-}
-return sum /16; // returns average val
-}
+//uint16_t adc_read_average(void){
+	//int i;
+//uint32_t sum = 0; // stores total for all samples
+//for(i = 0; i < 16; i++){ // takes multiple ADC readings 
+//sum += adc_read(); // adds each sample to total 
+//}
+//return sum /16; // returns average val
+//}
 
 // needs to average and distance 
