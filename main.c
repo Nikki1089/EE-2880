@@ -52,8 +52,7 @@ int main(void)
 
     // initialize the cyBot UART1 before trying to use it
     //uart_interrupt_init();
-    oi_setWheels(0,0);
-adc_init();
+
 
 //  // (Uncomment ME for UART init part of lab)
 //    cyBot_uart_init_clean();  // Clean UART1 initialization, before running your UART1 GPIO init code
