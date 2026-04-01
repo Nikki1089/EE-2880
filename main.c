@@ -29,6 +29,23 @@
 
 int main(void)
 {
+   
+    oi_t *sensor_data = oi_alloc();
+    oi_init(sensor_data); 
+
+    timer_init(); 
+    uart_init();
+    lcd_init(); 
+    cyBOT_init_Scan(0b0111);
+
+    cyBOT_Scan_t scan;                    // Holds data from one scan position
+
+    oi_setWheels(0,0);
+
+    adc_init();
+
+    char msg[20];
+
     //button_init();
     timer_init(); // Must be called before lcd_init(), which uses timer functions
     lcd_init();
