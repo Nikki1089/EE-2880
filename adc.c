@@ -53,7 +53,7 @@ uint32_t sum = 0; // stores total for all samples
 for(i = 0; i < 16; i++){ // takes multiple ADC readings 
 sum += adc_read(); // adds each sample to total 
 }
-/eturn sum /16; // returns average val
+return sum /16; // returns average val
 }
  float adc_get_distance(void){
 uint16_t adc = adc_read();
