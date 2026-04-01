@@ -14,6 +14,8 @@
 #define ADC_SS_2 4
 #define ADC_SS_3 8
 
-void adc_init();
+void adc_init(void);
+uint16_t adc_read(void);
+uint16_t adc_read_average(void);
 
 #endif
