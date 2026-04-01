@@ -55,7 +55,7 @@ sum += adc_read(); // adds each sample to total
 }
 /eturn sum /16; // returns average val
 }
- float adc_getdustance(void){
+ float adc_get_distance(void){
 uint16_t adc = adc_read();
 
  if (adc <= # ) {
