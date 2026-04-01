@@ -52,7 +52,7 @@ int main(void)
 
     // initialize the cyBot UART1 before trying to use it
     //uart_interrupt_init();
-// float distance and average
+
 
 //  // (Uncomment ME for UART init part of lab)
 //    cyBot_uart_init_clean();  // Clean UART1 initialization, before running your UART1 GPIO init code
@@ -90,6 +90,15 @@ int main(void)
         // add float dist = adc_getdistance();
         lcd_printf("adc: %u"), adc_value);//,adc_value,dist); for part 2 plus change formatting to add dist:
         timer_waitMillis(200);
+
+       //adcavg = 0;
+       // distanceavg = 0;
+     //  for (i = 0; i < 1000; i++) {
+       //     adcavg += adc_read() / 1000.0;
+         //   distanceavg += adc_getDistance() / 1000.0;
+           // timer_waitMillis(1);
+        }
+       
     }
 }
 //        char cmd = uart_receive();
