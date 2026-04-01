@@ -41,7 +41,7 @@ void adc_init() {
 	ADC0_ACTSS_R |= ADC_SS_0;
 }
 uint16_t adc_read(void) {
-    ADC0_PSSI_R = 0x8; // conversion on ss3
+    ADC0_PSSI_R = 0x1; // conversion on ss3
     while((ADC0_RIS_R & 0x8) == 0); // waiting for conversion to finish
     uint16_t result = ADC0_SSFIFO3_R;  // read 12 bit result
     ADC0_ISC_R = 0x8; // clears flag 
